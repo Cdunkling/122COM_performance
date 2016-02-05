@@ -1,10 +1,10 @@
 import sys
 
-def find_first_n_version1(self, n):
+def find_first_n_version1(n):
     primes = [2]
 
     counter = 3
-    while len(self.primes) < n:
+    while len(primes) < n:
         prime = True
 
         for i in range(3,counter):
@@ -12,25 +12,25 @@ def find_first_n_version1(self, n):
                 prime = False
 
         if prime:
-            self.primes.append(counter)
+            primes.append(counter)
 
         counter += 1
 
     return primes
 
-def find_first_n_version2(self, n):
+def find_first_n_version2(n):
     primes = []
 
     counter = 2
-    while len(self.primes) < n:
+    while len(primes) < n:
         prime = True
 
-        for i in self.primes:
+        for i in primes:
             if counter % i == 0:
                 prime = False
 
         if prime:
-            self.primes.append(counter)
+            primes.append(counter)
 
         counter += 1
 

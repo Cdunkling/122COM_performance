@@ -16,14 +16,14 @@ set FILENAME=%1
 REM see if an output filename has been supplied then use that
 if not "%2"=="" set OUTFILE=%2
 
-echo == Run the python program ======
+echo === Run the python program ======
 echo   "%PYTHON%" -m cProfile -o python.prof "%FILENAME%"
 "%PYTHON%" -m cProfile -o python.prof "%FILENAME%"
 echo _
 
 echo === Format the profiling results ======
 echo   "%PYTHON%" "%GPROF%" -f pstats python.prof -o gprof.dot
-"%PYTHON%" "%GPROF%" -n0 -e0 -f pstats python.prof -o gprof.dot
+"%PYTHON%" "%GPROF%" -f pstats python.prof -o gprof.dot
 echo _
 
 echo === Create profiling graph ======

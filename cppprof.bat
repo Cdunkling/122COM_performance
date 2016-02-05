@@ -28,8 +28,8 @@ test
 echo _
 
 echo === Format the profiling results ======
-echo "  gprof test | "%PYTHON%" "%GPROF%" -f pstats cpp.prof -o gprof.dot"
-gprof test | "%PYTHON%" "%GPROF%" -n0 -e0 -o gprof.dot
+echo "  gprof test | "%PYTHON%" "%GPROF%" -f pstats -o gprof.dot"
+gprof test | "%PYTHON%" "%GPROF%" -o gprof.dot
 echo _
 
 echo === Create profiling graph ======
