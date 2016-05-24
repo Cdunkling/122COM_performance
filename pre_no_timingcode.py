@@ -5,7 +5,7 @@ def fast_math_function(a, b):
     return a + b
 
 def slow_math_function(a, b):
-    time.sleep(3)
+    time.sleep(1)
     return a + b
 
 def main():
@@ -13,7 +13,7 @@ def main():
     slow_math_function(42, 69)
     
     print('Running fast_math_function()')
-    for i in range(100000):
+    for i in range(10000):
         fast_math_function(42,69)
     
 if __name__ == '__main__':
