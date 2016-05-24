@@ -3,79 +3,79 @@ using namespace std;
 
 vector<int> find_first_n_version1( int n )
 {
-	vector<int> primes;
-	primes.emplace_back(2);
+    vector<int> primes;
+    primes.emplace_back(2);
 
-	int counter = 3;
-	while( primes.size() < n )
-	{
-		bool prime = true;
+    int counter = 3;
+    while( primes.size() < n )
+    {
+        bool prime = true;
 
-		for( int i=3; i<counter; ++i )
-			if( counter % i == 0 )
-				prime = false;
+        for( int i=3; i<counter; ++i )
+            if( counter % i == 0 )
+                prime = false;
 
-		if( prime )
-			primes.emplace_back(counter);
+        if( prime )
+            primes.emplace_back(counter);
 
-		counter += 1;
-	}
+        counter += 1;
+    }
 
-	return primes;
+    return primes;
 }
 
 vector<int> find_first_n_version2( int n )
 {
-	vector<int> primes;
+    vector<int> primes;
 
-	int counter = 2;
-	while( primes.size() < n )
-	{
-		bool prime = true;
-		int half = counter/2;
+    int counter = 2;
+    while( primes.size() < n )
+    {
+        bool prime = true;
+        int half = counter/2;
 
-		for( int i=0; prime && i<primes.size() && primes[i]<=half; ++i )
-			if( counter % primes[i] == 0 )
-				prime = false;
+        for( int i=0; prime && i<primes.size() && primes[i]<=half; ++i )
+            if( counter % primes[i] == 0 )
+                prime = false;
 
-		if( prime )
-			primes.emplace_back(counter);
+        if( prime )
+            primes.emplace_back(counter);
 
-		counter += 1;
-	}
+        counter += 1;
+    }
 
-	return primes;
+    return primes;
 }
 
 vector<int> find_first_n_version3( int n )
 {
-	vector<int> primes;
+    vector<int> primes;
 
-	int counter = 2;
-	while( primes.size() < n )
-	{
-		bool prime = true;
+    int counter = 2;
+    while( primes.size() < n )
+    {
+        bool prime = true;
 
-		for( int i=0; prime && i<primes.size(); ++i )
-			if( counter % primes[i] == 0 )
-				prime = false;
+        for( int i=0; prime && i<primes.size(); ++i )
+            if( counter % primes[i] == 0 )
+                prime = false;
 
-		if( prime )
-			primes.emplace_back(counter);
+        if( prime )
+            primes.emplace_back(counter);
 
-		counter += 1;
-	}
+        counter += 1;
+    }
 
-	return primes;
+    return primes;
 }
 
 int main()
 {
-	int primesToFind = 1000;
+    int primesToFind = 1000;
 
-	find_first_n_version1( primesToFind );
-	find_first_n_version2( primesToFind );
-	find_first_n_version3( primesToFind );
+    find_first_n_version1( primesToFind );
+    find_first_n_version2( primesToFind );
+    find_first_n_version3( primesToFind );
 
-	return 0;
+    return 0;
 }

@@ -9,8 +9,10 @@ def slow_math_function(a, b):
     return a + b
 
 def main():
+    print('Running slow_math_function()')
     slow_math_function(42, 69)
     
+    print('Running fast_math_function()')
     for i in range(100000):
         fast_math_function(42,69)
     
